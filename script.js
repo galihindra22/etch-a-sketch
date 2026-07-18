@@ -25,11 +25,15 @@ function makeSquares(numOfSquares){
             colDiv.style.display = "flex";
 
             colDiv.addEventListener("mouseenter", (event) =>{
-                event.target.style.backgroundColor = "red";
+                let color = randomRgba();
+                event.target.style.backgroundColor = color;
             });
             rowDiv.appendChild(colDiv);
         }
     }
 }
 
-
+function randomRgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
