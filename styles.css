@@ -1,0 +1,20 @@
+#container{
+    width: 900px;
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    width: 80px;
+    align-self: center;
+}
+.column{
+    flex: 1;
+    border: solid 1px black;
+    padding: 18px;
+    margin: 1px;
+}
