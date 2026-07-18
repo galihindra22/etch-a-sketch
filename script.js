@@ -1,20 +1,35 @@
 const container = document.getElementById("container");
+const btn = document.querySelector("button");
 
-for(let i=0; i<16; i++){
-    const rowDiv = document.createElement("div");
-    rowDiv.classList = "row";
+btn.addEventListener("click", (event) =>{
+    const numOfSquares = prompt("Enter a # of squares per side: ");
+    if(numOfSquares>100){
+        alert("Too Many Squares! Maximum is 100");
+    }
+    else{
+        makeSquares(numOfSquares);
+    }
+});
 
-    rowDiv.style.display = "flex";
-    container.appendChild(rowDiv);
-    for(let j=0; j<16; j++){
-        const colDiv = document.createElement("div");
-        colDiv.classList = "column";
-        colDiv.style.display = "flex";
+function makeSquares(numOfSquares){
+    container.innerHTML = "";
+    for(let i=0; i<numOfSquares; i++){
+        const rowDiv = document.createElement("div");
+        rowDiv.classList = "row";
 
-        colDiv.addEventListener("mouseenter", (event) =>{
-            event.target.style.backgroundColor = "red";
-        });
-        rowDiv.appendChild(colDiv);
+        rowDiv.style.display = "flex";
+        container.appendChild(rowDiv);
+        for(let j=0; j<numOfSquares; j++){
+            const colDiv = document.createElement("div");
+            colDiv.classList = "column";
+            colDiv.style.display = "flex";
+
+            colDiv.addEventListener("mouseenter", (event) =>{
+                event.target.style.backgroundColor = "red";
+            });
+            rowDiv.appendChild(colDiv);
+        }
     }
 }
+
 

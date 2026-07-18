@@ -1,5 +1,8 @@
 #container{
+    display: flex;
     width: 900px;
+    height: 900px;
+    flex-direction: column;
     
 }
 body{
@@ -11,10 +14,13 @@ body{
 button{
     width: 80px;
     align-self: center;
+    margin: 20px;
 }
 .column{
     flex: 1;
     border: solid 1px black;
-    padding: 18px;
-    margin: 1px;
+    box-sizing: border-box;
+}
+.row{
+    flex: 1;
 }
